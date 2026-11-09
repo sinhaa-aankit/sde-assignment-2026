@@ -1,6 +1,6 @@
 # Outcome-First Agent Loop — Submission
 
-**Name:** _(your name)_ · **Date:** _(date)_ · **Hours actually spent:** _(fill in)_ · **Language / storage:** TypeScript on Node.js 24 (no runtime dependencies) / SQLite (Node's built-in `node:sqlite`, one file per scenario)
+**Name:** Ankit Kumar Sinha · **Date:** 9 November 2026 · **Hours actually spent:** ~10, over 4 days, AI-assisted (Claude Code); every line reviewed · **Language / storage:** TypeScript on Node.js 24 (no runtime dependencies) / SQLite (Node's built-in `node:sqlite`, one file per scenario)
 
 ---
 
