@@ -1,0 +1,2 @@
+# Keep Unix line endings so run.sh works on the Linux grading box even when committed from Windows.
+* text=auto eol=lf

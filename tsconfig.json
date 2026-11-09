@@ -1,0 +1,16 @@
+﻿{
+  "//": "Editor type-checking only. Node 24 runs the .ts files directly; nothing is compiled.",
+  "compilerOptions": {
+    "target": "es2024",
+    "module": "nodenext",
+    "strict": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "types": ["node"]
+  },
+  "include": ["controller", "scripts"]
+}
+
+
