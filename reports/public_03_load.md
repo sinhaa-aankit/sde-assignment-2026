@@ -1,0 +1,142 @@
+# Grade report — public_03_load
+
+## Outcomes vs baseline (no-op controller)
+
+| workflow | conclusion rate | Δ | pickup | Δ | engagement | Δ | engagement gap captured | hallucinated calls (base) |
+|---|---|---|---|---|---|---|---|---|
+| arav_cancel_2 | 0.390 | +14.2% | 0.262 | +7.3% | 0.526 | +5.1% | 38% | 436 (408) |
+| arav_kyc_1 | 0.470 | +32.9% | 0.272 | +27.0% | 0.594 | -0.3% | 0% | 415 (370) |
+| arav_renewal_0 | 0.467 | +16.1% | 0.283 | +7.0% | 0.587 | +8.0% | 37% | 421 (440) |
+| kest_cancel_2 | 0.388 | +14.6% | 0.261 | +7.5% | 0.526 | +5.6% | 38% | 391 (411) |
+| kest_kyc_1 | 0.358 | +1.2% | 0.214 | +0.3% | 0.598 | +0.7% | 0% | 344 (339) |
+| kest_renewal_0 | 0.472 | +18.0% | 0.282 | +6.9% | 0.591 | +9.0% | 44% | 464 (433) |
+| nort_cancel_2 | 0.387 | +14.3% | 0.262 | +8.0% | 0.524 | +5.0% | 34% | 423 (393) |
+| nort_kyc_1 | 0.471 | +33.0% | 0.272 | +27.8% | 0.594 | -0.2% | 0% | 394 (323) |
+| nort_renewal_0 | 0.473 | +16.9% | 0.282 | +6.9% | 0.595 | +8.6% | 47% | 482 (411) |
+| tide_cancel_2 | 0.386 | +13.9% | 0.261 | +6.8% | 0.525 | +5.1% | 37% | 445 (407) |
+| tide_kyc_1 | 0.467 | +32.0% | 0.271 | +26.3% | 0.593 | +0.2% | 0% | 391 (356) |
+| tide_renewal_0 | 0.470 | +17.1% | 0.280 | +6.1% | 0.592 | +9.1% | 42% | 457 (438) |
+| ALL | 0.433 | +18.7% | 0.267 | +11.0% | 0.571 | +4.9% | 26% | 5063 (4729) |
+
+## Changes applied by the controller
+
+52 applied — neutral: 20, beneficial: 32
+
+- nort_renewal_0 v2 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=-0.010 → **neutral**
+- nort_cancel_2 v2 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.008 → **neutral**
+- kest_renewal_0 v2 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=-0.010 → **neutral**
+- kest_cancel_2 v2 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.008 → **neutral**
+- arav_renewal_0 v2 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=-0.010 → **neutral**
+- arav_cancel_2 v2 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.008 → **neutral**
+- tide_renewal_0 v2 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=-0.010 → **neutral**
+- tide_cancel_2 v2 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.008 → **neutral**
+- nort_renewal_0 v3 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.053 → **beneficial**
+- nort_cancel_2 v3 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.023 → **beneficial**
+- kest_renewal_0 v3 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.053 → **beneficial**
+- kest_cancel_2 v3 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.023 → **beneficial**
+- arav_renewal_0 v3 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.053 → **beneficial**
+- arav_cancel_2 v3 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.023 → **beneficial**
+- tide_renewal_0 v3 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.053 → **beneficial**
+- tide_cancel_2 v3 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.023 → **beneficial**
+- nort_cancel_2 v4 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.010 → **neutral**
+- kest_cancel_2 v4 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.010 → **neutral**
+- arav_cancel_2 v4 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.010 → **neutral**
+- tide_cancel_2 v4 (controller_auto) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.010 → **neutral**
+- nort_kyc_1 v2 (controller_approved) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.052 → **beneficial**
+- kest_cancel_2 v5 (controller_approved) dims=['cohorts', 'welcome_message', 'voice'] engageΔ=-0.003 didΔ=+0.000 → **neutral**
+- arav_renewal_0 v4 (controller_approved) dims=['cohorts', 'welcome_message', 'voice'] engageΔ=+0.041 didΔ=+0.000 → **beneficial**
+- nort_renewal_0 v4 (controller_approved) dims=['cohorts', 'welcome_message', 'voice'] engageΔ=+0.041 didΔ=+0.000 → **beneficial**
+- kest_renewal_0 v4 (controller_approved) dims=['cohorts', 'welcome_message', 'voice'] engageΔ=+0.041 didΔ=+0.000 → **beneficial**
+- arav_cancel_2 v5 (controller_approved) dims=['cohorts', 'welcome_message', 'voice'] engageΔ=-0.003 didΔ=+0.000 → **neutral**
+- tide_kyc_1 v2 (controller_approved) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.058 → **beneficial**
+- tide_cancel_2 v5 (controller_approved) dims=['cohorts', 'welcome_message', 'voice'] engageΔ=-0.003 didΔ=+0.000 → **neutral**
+- nort_cancel_2 v5 (controller_approved) dims=['cohorts', 'welcome_message', 'voice'] engageΔ=-0.002 didΔ=+0.000 → **neutral**
+- tide_renewal_0 v4 (controller_approved) dims=['cohorts', 'welcome_message', 'voice'] engageΔ=+0.040 didΔ=+0.000 → **beneficial**
+- arav_kyc_1 v2 (controller_approved) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.068 → **beneficial**
+- arav_cancel_2 v6 (controller_approved) dims=['welcome_message', 'voice'] engageΔ=+0.078 didΔ=+0.000 → **beneficial**
+- nort_cancel_2 v6 (controller_approved) dims=['welcome_message'] engageΔ=+0.020 didΔ=+0.000 → **beneficial**
+- tide_cancel_2 v6 (controller_approved) dims=['welcome_message', 'voice'] engageΔ=+0.078 didΔ=+0.000 → **beneficial**
+- nort_renewal_0 v5 (controller_approved) dims=['welcome_message', 'voice'] engageΔ=+0.097 didΔ=+0.000 → **beneficial**
+- kest_cancel_2 v6 (controller_approved) dims=['welcome_message', 'voice'] engageΔ=+0.078 didΔ=+0.000 → **beneficial**
+- arav_renewal_0 v5 (controller_approved) dims=['welcome_message', 'voice'] engageΔ=+0.035 didΔ=+0.000 → **beneficial**
+- arav_kyc_1 v3 (controller_approved) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.496 → **beneficial**
+- tide_renewal_0 v5 (controller_approved) dims=['welcome_message', 'voice'] engageΔ=+0.080 didΔ=+0.000 → **beneficial**
+- nort_kyc_1 v3 (controller_approved) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.515 → **beneficial**
+- kest_renewal_0 v5 (controller_approved) dims=['welcome_message', 'voice'] engageΔ=+0.097 didΔ=+0.000 → **beneficial**
+- tide_kyc_1 v3 (controller_approved) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.536 → **beneficial**
+- tide_renewal_0 v6 (controller_approved) dims=['voice'] engageΔ=+0.000 didΔ=+0.000 → **neutral**
+- nort_cancel_2 v7 (controller_approved) dims=['welcome_message', 'voice'] engageΔ=+0.076 didΔ=+0.000 → **beneficial**
+- kest_cancel_2 v7 (controller_approved) dims=['welcome_message'] engageΔ=+0.007 didΔ=+0.000 → **neutral**
+- arav_renewal_0 v6 (controller_approved) dims=['welcome_message'] engageΔ=+0.043 didΔ=+0.000 → **beneficial**
+- kest_kyc_1 v2 (controller_approved) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.053 → **beneficial**
+- arav_renewal_0 v7 (controller_approved) dims=['voice'] engageΔ=+0.019 didΔ=+0.000 → **beneficial**
+- tide_renewal_0 v7 (controller_approved) dims=['voice'] engageΔ=+0.020 didΔ=+0.000 → **beneficial**
+- nort_renewal_0 v6 (controller_approved) dims=['voice'] engageΔ=+0.004 didΔ=+0.000 → **neutral**
+- nort_cancel_2 v8 (controller_approved) dims=['voice'] engageΔ=+0.000 didΔ=+0.000 → **neutral**
+- kest_kyc_1 v3 (controller_approved) dims=['caller_id'] engageΔ=+0.000 didΔ=+0.532 → **beneficial**
+
+## Governance
+
+```
+{
+  "approval_requests": 37,
+  "decisions": {
+    "approved": 32,
+    "rejected": 5,
+    "expired": 0
+  },
+  "rejection_reasons": {
+    "approver declined (judgement call)": 5
+  },
+  "applied_via_approval": 32,
+  "auto_applied": 20,
+  "auto_apply_rejected": 0,
+  "apply_conflicts": 0,
+  "lapsed": 0,
+  "peak_requests_per_24h": {
+    "nort_kyc_1": 1,
+    "arav_kyc_1": 1,
+    "tide_kyc_1": 1,
+    "nort_renewal_0": 2,
+    "kest_renewal_0": 1,
+    "kest_kyc_1": 1,
+    "arav_renewal_0": 2,
+    "tide_renewal_0": 2,
+    "nort_cancel_2": 2,
+    "kest_cancel_2": 2,
+    "arav_cancel_2": 2,
+    "tide_cancel_2": 2
+  }
+}
+```
+
+## Incidents
+
+```
+[]
+```
+
+## Decaying variants — share of in-population calls still on the variant, by day after onset
+
+```
+{
+  "nort_renewal_0:welcome_message=W3": {
+    "3": 0.797,
+    "4": 0.805
+  },
+  "kest_renewal_0:welcome_message=W3": {
+    "3": 0.801,
+    "4": 0.803
+  },
+  "arav_renewal_0:welcome_message=W3": {
+    "3": 0.803,
+    "4": 0.8
+  },
+  "tide_renewal_0:welcome_message=W3": {
+    "3": 0.801,
+    "4": 0.8
+  }
+}
+```
+
+Credits used: 0 · validation runs: 0 · LLM fix calls: 0
